@@ -6,7 +6,7 @@
       Putty download link for windows machine: https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.79-installer.msi
       MobaXterm link: https://download.mobatek.net/2322023060714555/MobaXterm_Installer_v23.2.zip
 
-#################################################################################################################################################################
+###############################################################################################################################################
 
 A. Before installing any package, we must gather few details of OS, so that we can install the correct package.
 
@@ -24,8 +24,31 @@ C. Find disk space details to identify data directory location for mysql.
 
 D. Once these details are gathered, we can proceed with next steps.
 
-###############################################################################################################################################################
+###############################################################################################################################################
 
 We can install MySQL by using Repo or Manual RPM installation or Binary installation
+
+MySQL REPO based installation:
+
+What is repo? A repository is a location from where the Linux system retrieves and installs updates and applications related to the Operating system or any desired application.
+
+Command to check existing repos in the OS:
+      
+      # ll /etc/yum.repos.d/
+      total 8
+      -rw-r--r-- 1 root root 1003 Oct 26  2021 amzn2-core.repo
+      -rw-r--r-- 1 root root 2150 Sep  6 18:19 amzn2-extras.repo
+
+Above you can see 2 repos for an AWS Linux OS. THese 2 repos are used by AWS Linux to update OS packages and to install OS related packages.
+
+Similarly, we will be adding a repo for MySQL as well, so that we can install the desired version along with necessary dependent packages.
+
+# STEPS TO ADD MYSQL REPO
+
+
+      
+      
+
+
 
 
