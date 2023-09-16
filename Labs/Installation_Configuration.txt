@@ -1,6 +1,7 @@
-#This document will cover installation steps for Redhat/Amazon linux and Ubuntu systems
+#This document will cover installation steps for Redhat/Amazon linux and Ubuntu system
 
 # Prerequisites for lab practicals
+
 #  1. Putty or MobaXterm for connecting to lab
       Putty download link for windows machine: https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.79-installer.msi
       MobaXterm link: https://download.mobatek.net/2322023060714555/MobaXterm_Installer_v23.2.zip
@@ -11,4 +12,18 @@ A. Before installing any package, we must gather few details of OS, so that we c
 
     1. Find OS type : Windows/Linux
     2. OS Version :
-            In Linux/Unix
+            In Linux/Unix you can check type of OS by running below commands:
+            a. cat /etc/os-release or cat /etc/redhat-release
+            b. hostnamectl
+
+B. Find out which Mysql version needs to be installed - MySQL 5.7/8.0 ?
+
+C. Find disk space details to identify data directory location for mysql.
+            Command to identify disk space utilization:
+                  df -h
+
+D. Once these details are gathered, we can proceed with next steps.
+
+###############################################################################################################################################################
+
+
