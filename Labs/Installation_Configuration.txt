@@ -45,9 +45,8 @@ Similarly, we will be adding a repo for MySQL as well, so that we can install th
 
 # STEPS TO ADD MYSQL REPO
 
-
-      
-      
+# MySQL Repo link:
+      https://dev.mysql.com/get/mysql80-community-release-el8-8.noarch.rpm
 
 
 
