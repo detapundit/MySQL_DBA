@@ -1,1 +1,14 @@
+#This document will cover installation steps for Redhat/Amazon linux and Ubuntu systems
 
+# Prerequisites for lab practicals
+#  1. Putty or MobaXterm for connecting to lab
+      Putty download link for windows machine: https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.79-installer.msi
+      MobaXterm link: https://download.mobatek.net/2322023060714555/MobaXterm_Installer_v23.2.zip
+
+#################################################################################################################################################################
+
+A. Before installing any package, we must gather few details of OS, so that we can install the correct package.
+
+    1. Find OS type : Windows/Linux
+    2. OS Version :
+            In Linux/Unix
