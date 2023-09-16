@@ -1,4 +1,4 @@
-#This document will cover installation steps for Redhat/Amazon linux and Ubuntu system
+#This document will cover installation steps for Redhat/Amazon linux
 
 # Prerequisites for lab practicals
 
@@ -39,13 +39,13 @@ Command to check existing repos in the OS:
       -rw-r--r-- 1 root root 1003 Oct 26  2021 amzn2-core.repo
       -rw-r--r-- 1 root root 2150 Sep  6 18:19 amzn2-extras.repo
 
-Above you can see 2 repos for an AWS Linux OS. THese 2 repos are used by AWS Linux to update OS packages and to install OS related packages.
+Above you can see 2 repos for an AWS Linux OS. These 2 repos are used by AWS Linux to update OS packages and to install OS related packages.
 
 Similarly, we will be adding a repo for MySQL as well, so that we can install the desired version along with necessary dependent packages.
 
 # STEPS TO ADD MYSQL REPO
 
-# MySQL Repo link:
+# MySQL Repo link for Amazon Linux 2 image
       https://dev.mysql.com/get/mysql80-community-release-el7-10.noarch.rpm
 
 1. Login to server where we need to install MySQL
