@@ -48,6 +48,14 @@ Similarly, we will be adding a repo for MySQL as well, so that we can install th
 # MySQL Repo link:
       https://dev.mysql.com/get/mysql80-community-release-el8-8.noarch.rpm
 
+1. Login to server where we need to install MySQL
+
+2. Check if any mysql process is already running
+      ps -ef|grep mysql
+
+3. Check if mysql is already installed
+      rpm -qa|grep -i mysql
+
 
 
 
