@@ -26,4 +26,6 @@ D. Once these details are gathered, we can proceed with next steps.
 
 ###############################################################################################################################################################
 
+We can install MySQL by using Repo or Manual RPM installation or Binary installation
+
 
