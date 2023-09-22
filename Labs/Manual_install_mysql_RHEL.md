@@ -13,12 +13,19 @@
 # Sequence:
 
        mysql-community-common-8.0.34-1.el7.x86_64.rpm
+       
        mysql-community-client-plugins-8.0.34-1.el7.x86_64.rpm
+       
        mysql-community-libs-8.0.34-1.el7.x86_64.rpm
+       
        mysql-community-libs-compat-8.0.34-1.el7.x86_64.rpm
+       
        mysql-community-test-8.0.34-1.el7.x86_64.rpm
+       
        mysql-community-icu-data-files-8.0.34-1.el7.x86_64.rpm
+       
        mysql-community-server-8.0.34-1.el7.x86_64.rpm
+       
        mysql-community-client-8.0.34-1.el7.x86_64.rpm
 
 
