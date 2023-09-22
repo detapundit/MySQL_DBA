@@ -20,7 +20,8 @@ B. Find out which Mysql version needs to be installed - MySQL 5.7/8.0 ?
 
 C. Find disk space details to identify data directory location for mysql.
             Command to identify disk space utilization:
-                  df -h
+            
+            df -h
 
 D. Once these details are gathered, we can proceed with next steps.
 
@@ -51,42 +52,55 @@ Similarly, we will be adding a repo for MySQL as well, so that we can install th
 1. Login to server where we need to install MySQL
 
 2. Check if any mysql process is already running
-      ps -ef|grep mysql
 
-3. Check if mysql is already installed
-      rpm -qa|grep -i mysql
+         ps -ef|grep mysql
 
-4. Download the MySQL repo file from below link based on OS and MySQL version
+4. Check if mysql is already installed
+
+         rpm -qa|grep -i mysql
+
+6. Download the MySQL repo file from below link based on OS and MySQL version
       https://dev.mysql.com/downloads/repo/yum/
-      wget download_link_of_repo_file
 
-5. Install the repo
-      yum install repo_file_name
+         wget download_link_of_repo_file
 
-6. Verify the repo file
-      ls /etc/yum.repos.d
-      cat /etc/yum.repos.d/file_name.repo    <= Mention Mysql repo file here
+8. Install the repo
 
-7. Install MySQL
-      yum install mysql-community-server*
+         yum install repo_file_name
 
-8. If installation is successful, then start mysql service.
-      systemctl start mysqld
+10. Verify the repo file
 
-9. Verify if process is up and running
-      systemctl status mysqld
-      ps -ef|grep mysql
-      netstat -tnlp
+          ls /etc/yum.repos.d
+          cat /etc/yum.repos.d/file_name.repo    <= Mention Mysql repo file here
 
-10. First time login to mysql. Get temporary root password from mysql log file
-      cat /var/log/mysqld.log |grep 'temporary'   <= Copy the root password
-      mysql -uroot -p  <= Press enter, it will prompt for password. Enter/Paste the password copied in above command
+12. Install MySQL
 
-11. Once logged in, first command will be to change the root password. It will not allow to run any other command unless you change the password.
-      ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password$1';
+          yum install mysql-community-server*
 
-12. Exit from mysql prompt and login again as root with new password.
-      mysql -uroot -p  <= Press enter, it will prompt for password. Enter/Paste new password that was created in previous step.
+14. If installation is successful, then start mysql service.
+
+          systemctl start mysqld
+
+16. Verify if process is up and running
+
+          systemctl status mysqld
+
+          ps -ef|grep mysql
+
+          netstat -tnlp
+
+18. First time login to mysql. Get temporary root password from mysql log file
+
+          cat /var/log/mysqld.log |grep 'temporary'   <= Copy the root password
+          mysql -uroot -p  <= Press enter, it will prompt for password. Enter/Paste the password copied in above command
+
+20. Once logged in, first command will be to change the root password. It will not allow to run any other command unless you change the password.
+
+          ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password$1';
+
+22. Exit from mysql prompt and login again as root with new password.
+
+          mysql -uroot -p  <= Press enter, it will prompt for password. Enter/Paste new password that was created in previous step.
       
 
 
