@@ -13,3 +13,11 @@
 5. Setup the root password for mysql when it prompts
 
 6. Login to mysql with root user name and password set in previous step
+
+7. Default location for my.cnf in ubuntu os is /etc/mysql
+        cat /etc/mysql/conf.d/mysqld.cnf OR
+        cat /etc/mysql/my.cnf
+
+
+
+
