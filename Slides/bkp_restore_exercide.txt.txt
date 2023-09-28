@@ -1,0 +1,34 @@
+### MYSQLDUMP IMP COMMANDS #######
+
+
+
+### FULL DATABASE BACKUP - Has to be restored in full, without any edits
+
+mysqldump -uroot -p --single-transaction --source-data --routines --all-databases | gzip -c > /path/file_name.sql.gz
+
+
+### SINGLE DATABASE BACKUP without --database option
+
+mysqldump -uroot -p --single-transaction --source-data --routines DB_NAME | gzip -c > /path/file_name.sql.gz
+
+
+### SINGLE/MULTIPLE TABLE BACKUP without --database option
+
+
+mysqldump -uroot -p --single-transaction --source-data --routines DB_NAME TB1 TB2 TB3 | gzip -c > /path/file_name.sql.gz
+
+
+### SINGLE/MULTIPLE DATABASE BACKUP with --database option
+
+
+mysqldump -uroot -p --single-transaction --source-data --routines --database DB_NAME1 DB_NAME2 | gzip -c > /path/file_name.sql.gz
+
+
+
+
+### PRACTICE
+
+1. Take a single DB dump from server (sakila)
+2. Take full database dump
+3. Drop any 1 database
+4. Restore from full backup taken in step.2
