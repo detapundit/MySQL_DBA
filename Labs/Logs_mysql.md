@@ -15,7 +15,26 @@
 
 Binary logs:  Enabled by default in recent version of mysql. check from mysql command line using show variables**
 
-    show variables like '%log_bin%
+    mysql>show variables like '%log_bin%
+    log-bin=mysql-bin  # in my.cnf
+    expire_logs_days = 2 # in my.cnf
+    binlog_format=mixed  # in my.cnf
+    mysql> SHOW BINARY LOGS;
+
+    # Entries of specific database:
+    mysqlbinlog -d mdata mysqld-bin.000001 > crm-event_log.txt
+
+    # you can specify the position you want to read data from, using the -j option as follows:
+    
+    mysqlbinlog -j 123 mysqld-bin.000002 > from-123.txt
+
+    # you can specify the position till where you want to extract the data:
+
+    mysqlbinlog --stop-position=219 mysqld-bin.000001 > upto-219.txt
+    
+    mysqlbinlog --start-datetime="2005-12-25 11:25:56" binlog.000003
+    mysqlbinlog binlog.000001 | mysql -u root -p
+    mysqlbinlog binlog.000001 binlog.000002 | mysql -u root -p
 
 
 
