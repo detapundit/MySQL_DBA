@@ -21,6 +21,7 @@ Binary logs:  Enabled by default in recent version of mysql. check from mysql co
     expire_logs_days = 2 # in my.cnf
     binlog_format=mixed  # in my.cnf
     mysql> SHOW BINARY LOGS;
+    mysql> purge binary logs to 'binlog.000014';
 
     # Entries of specific database:
     mysqlbinlog -d mdata mysqld-bin.000001 > crm-event_log.txt
