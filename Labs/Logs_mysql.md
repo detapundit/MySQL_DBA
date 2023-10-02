@@ -12,7 +12,8 @@
 
     set global slow_query_log=1
     set global long_query_time=5  => Value in secs. Default is 10 secs
-
+    mysqldumpslow -s -t /var/lib/mysql/ip-172-31-7-234-slow.log
+    
 Binary logs:  Enabled by default in recent version of mysql. check from mysql command line using show variables**
 
     mysql>show variables like '%log_bin%
