@@ -1,12 +1,12 @@
 **Replication filters**
 
-**Binary log filter**
+**Binary log filter - Added at source(Master)** 
 
     i) Binlog_do_db  - binlog_do_db=dbname
     
     ii) Binlog_ignore_db - binlog_ignore_db=dbname
 
-**Replicate Filter**
+**Replicate Filter - Added at replica(Slave)**
 
     i) Replicate_do_db - replicate_do_db=dbname
     ii) Replicate_ignore_db - replicate_ignore_db=dbname
