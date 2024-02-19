@@ -10,9 +10,9 @@
     sudo service mysql stop
 
     
-  Node 1	pxc1	172.31.33.114
-  Node 2	pxc2	172.31.33.61
-  Node 3	pxc3	172.31.41.14
+      Node 1	pxc1	172.31.33.114
+      Node 2	pxc2	172.31.33.61
+      Node 3	pxc3	172.31.41.14
     
 
 **writeset replication parameters**
