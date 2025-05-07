@@ -55,9 +55,24 @@ mysql> revoke delete on *.* from rwuser@'172.4.3.67';
 mysql> drop user rwuser@'172.4.3.67';
 
 --- Dual password
+In 8.0.14, we have the ability to create what's called a dual password support. Now, we have to have RETAIN CURRENT PASSWORD clause if we want to maintain that older password
+The new password is considered the primary. The old password is considered the secondary.
+And then once we no longer want that secondary, we can go ahead and alter that user. And we discard that old password.
 
+  ALTER USER USER() identified by 'newPassWorD$' RETAIN CURRENT PASSWORD;
+  ALTER USER USER() DISCARD OLD PASSWORD;
 
+--- Password expiration. They can login with expired passwords but need to change it first
+--- We can configure password expiration. We can set a default for our system, default_password_lifetime. The default value is 0
+  
+  create user appusr@localhost identified by 'Password@1' PASSWORD EXPIRE;
 
+  alter user testusr@localhost PASSWORD EXPIRE;
+  
+   alter user testusr@localhost PASSWORD EXPIRE DEFAULT;
+   alter user testusr@localhost PASSWORD EXPIRE INTERVAL 30 DAY;
+   alter user testusr@localhost PASSWORD EXPIRE NEVER;
+  
 --- To change password for particular user
 
 mysql> alter user root@localhost identified by 'Password@1';
