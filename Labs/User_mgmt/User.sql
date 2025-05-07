@@ -1,5 +1,8 @@
 --- List the privileges available
 
+In 8.0, a caching password is the default authentication plugin.
+We can have a user name up to 32 characters
+
 mysql> show privileges;
 
 --- User details are stored under mysql database in "user" table
@@ -51,7 +54,11 @@ mysql> revoke delete on *.* from rwuser@'172.4.3.67';
 
 mysql> drop user rwuser@'172.4.3.67';
 
---- To change password for existing user
+--- Dual password
+
+
+
+--- To change password for particular user
 
 mysql> alter user root@localhost identified by 'Password@1';
 
