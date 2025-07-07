@@ -54,7 +54,7 @@ Insert three rows into the usr_details table:
 
 Finally, take a full backup of the appdb database and store the dump file in the ~/backup/ directory:
 
-    mysql -u root -p > ~/backup/appdb.sql
+    mysqldump -uroot -p --all-databases --source-data=2 > ~/backup/appdb.sql
 
 Making changes to the database
 First, reconnect to the MySQL server:
@@ -64,6 +64,7 @@ First, reconnect to the MySQL server:
 Change the current database to appdb:
 
     USE appdb;
+    Flush logs;
 
 Insert a new row into the appdb database:
 
@@ -96,7 +97,7 @@ Exit the mysql program:
 
 Check the time when we delete all rows from the usr_details table in the binary log file using the mysqlbinlog utility program:
 
-    mysqlbinlog  --verbose /var/lib/mysql/binlog.000001 | grep -i -C 10 "delete table"
+    mysqlbinlog  --verbose /var/lib/mysql/binlog.000002 | grep -i "Delete_rows"
 
 The output looks like this:
 
