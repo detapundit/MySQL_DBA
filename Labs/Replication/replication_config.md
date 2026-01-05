@@ -4,6 +4,7 @@ Minimum 2 servers required. One will act as master and other will act as slave
 
 # If setting up replication on freshly installed mysql servers with already existing data in Master
 **Make sure auto.cnf values are different**
+
 **Configuration required in Master MySQL my.cnf. Restart if adding or making any changes in my.cnf**
 
     Parameters to be added in my.cnf
