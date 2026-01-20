@@ -28,3 +28,41 @@ Problematic case:
 
               INSERT INTO audit_log VALUES (NOW());
 
+Cons
+
+Non-deterministic functions (NOW(), RAND(), UUID())
+Statements like LIMIT without ORDER BY can behave differently
+Harder to debug row-level data differences
+
+2. ROW-Based Replication (RBR)
+
+What it logs
+
+Logs the actual row changes (before/after image of rows).
+Replica does not re-execute SQL logic.
+
+            UPDATE employees
+            SET salary = salary + 1000
+            WHERE department = 'IT'; #Assume 2 rows are affected.
+
+Binlog entry (conceptually):
+
+            Row 1: salary 50000 → 51000
+            Row 2: salary 60000 → 61000
+
+Key characteristics
+
+Logs each changed row
+Larger binlog size
+Deterministic replication
+
+Pros
+
+Accurate and safe replication
+Works correctly with functions, triggers, and complex queries
+Easier to ensure data consistency
+
+Cons
+
+Larger binlog files
+More disk and network I/O
