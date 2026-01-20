@@ -2,7 +2,7 @@
 
 MySQL supports multiple binary log (binlog) formats. The two commonly used ones are STATEMENT-based and ROW-based logging.
 
-1. STATEMENT-Based Replication (SBR)
+**1. STATEMENT-Based Replication (SBR)**
 
 What it logs
 
@@ -16,7 +16,7 @@ Smaller binlog size.
 
 Faster logging.
 
-Pros
+**Pros:**
 
 Smaller binlog files
 
@@ -34,7 +34,7 @@ Problematic case:
 
               INSERT INTO audit_log VALUES (NOW());
 
-Cons
+**Cons:**
 
 Non-deterministic functions (NOW(), RAND(), UUID())
 
@@ -42,7 +42,7 @@ Statements like LIMIT without ORDER BY can behave differently
 
 Harder to debug row-level data differences
 
-2. ROW-Based Replication (RBR)
+**2. ROW-Based Replication (RBR)**
 
 What it logs
 
@@ -67,7 +67,7 @@ Larger binlog size
 
 Deterministic replication
 
-Pros
+**Pros:**
 
 Accurate and safe replication
 
@@ -75,7 +75,7 @@ Works correctly with functions, triggers, and complex queries
 
 Easier to ensure data consistency
 
-Cons
+**Cons:**
 
 Larger binlog files
 
