@@ -53,13 +53,37 @@ mysql-connectors-community       MySQL Connectors Community
 mysql-tools-8.4-lts-community    MySQL Tools 8.4 LTS Community
 ```
 
-### Check Available MySQL Versions
+### Configure Repository to Use MySQL 8.4 LTS
 
-You can verify which MySQL subrepositories are enabled:
+**Important:** Ensure MySQL 8.0 repository is disabled and MySQL 8.4 LTS is enabled:
+
+```bash
+# Disable MySQL 8.0 repository (if enabled)
+sudo dnf config-manager --disable mysql80-community
+
+# Enable MySQL 8.4 LTS repository
+sudo dnf config-manager --enable mysql-8.4-lts-community
+```
+
+**Note:** The `mysql84-community-release-el8-1.noarch.rpm` package should already enable the MySQL 8.4 LTS repository by default, but running these commands ensures the correct repository is active, especially if you had a previous MySQL repository configuration.
+
+### Verify Correct Repository is Enabled
+
+Check which MySQL subrepositories are enabled:
 
 ```bash
 sudo dnf repolist all | grep mysql
 ```
+
+Expected output:
+```
+mysql-8.4-lts-community          MySQL 8.4 LTS Community Server      enabled
+mysql80-community                MySQL 8.0 Community Server          disabled
+mysql-connectors-community       MySQL Connectors Community          enabled
+mysql-tools-8.4-lts-community    MySQL Tools 8.4 LTS Community       enabled
+```
+
+Make sure `mysql-8.4-lts-community` shows **enabled** and `mysql80-community` shows **disabled**.
 
 ---
 
